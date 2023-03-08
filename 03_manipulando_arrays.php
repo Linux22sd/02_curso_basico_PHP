@@ -9,6 +9,10 @@
  * is_array($array)
  * explode('separador', cadena)
  * implode('separador', $array)
+ * array_rand()
+ * rand()
+ * array_merge($array1, $array2)
+ * [...$array1, ...$array2]
  */
 
 $edades = [ 18, 22, 32, 34];
@@ -57,7 +61,37 @@ echo '</pre>';
 //-------------------------------------------------------------------------------------------
 // funcion (   implode()  ) Convierte un array en una cadena de texto
 $cadena2 = implode(',', $lista);
-echo $cadena2;
+echo $cadena2 , '<br><br>';
 //-------------------------------------------------------------------------------------------
+// funcion (   array_rand(array)  ) retorna un indice random del array 
+$array_nombres = ['Luis', 'Pedro', 'Juan'];
+$rand_nom = array_rand($array_nombres);
+echo $array_nombres[$rand_nom] . '<br><br>';
+
+// la funcion rand() retornara un numero random dentro del rango dado como argumentos
+$rand_num = rand(1, 20);
+echo $rand_num .'<br>';
+//-------------------------------------------------------------------------------------------
+// Para juntar dos arreglos o arrays se puede hacer de varias maneras:
+
+// con la funcion array_merge
+$array_nom1 = ['Luis', 'Pedro', 'Juan'];
+$array_nom2 = ['Maria', 'Lucia', 'Pancha'];
+
+$array_mix1 = array_merge($array_nom1, $array_nom2);
+echo '<pre>';
+print_r($array_mix1);
+echo '</pre>';
+
+// con array unpacking ...$array
+$array_nom3 = ['Alejandro', 'Martin', 'Eliseo'];
+$array_nom4 = ['Ana', 'Rosa', 'Lencha'];
+
+$array_mix2 = [...$array_nom3, ...$array_nom4];
+echo '<pre>';
+print_r($array_mix2);
+echo '</pre>';
+//-------------------------------------------------------------------------------------------
+
 
 ?>
